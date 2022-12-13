@@ -63,7 +63,7 @@ RUN   apt-get update && \
       @babel/core \
       @babel/cli && \
     npm cache clean --force && \
-    wget -O sass-embedded.tar.gz https://github.com/sass/dart-sass-embedded/releases/download/${DART_SASS_VERSION}/sass_embedded-${DART_SASS_VERSION}-linux-arm64.tar.gz && \
+    wget -O sass-embedded.tar.gz https://github.com/sass/dart-sass-embedded/releases/download/${DART_SASS_VERSION}/sass_embedded-${DART_SASS_VERSION}-linux-x64.tar.gz && \
     tar xf sass-embedded.tar.gz && \
     mv ./sass_embedded/dart-sass-embedded /usr/bin/ && \
     chmod 755 /usr/bin/dart-sass-embedded && \
