@@ -44,6 +44,9 @@ LABEL version="${HUGO_VERSION}"
 LABEL repository="https://github.com/openaq/hugo-docker"
 LABEL homepage="https://openaq.org/"
 
+LABEL org.opencontainers.image.source=https://github.com/openaq/hugo-docker
+LABEL org.opencontainers.image.description="image for building hugo with dart-sass-embedded"
+LABEL org.opencontainers.image.licenses=MIT
 
 COPY --from=build /go/bin/hugo /usr/bin/hugo
 
