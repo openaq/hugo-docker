@@ -66,7 +66,6 @@ RUN   apt-get update && \
       @babel/core \
       @babel/cli && \
     npm cache clean --force && \
-    git config --global --add safe.directory /github/workspace \ 
     wget -O sass-embedded.tar.gz https://github.com/sass/dart-sass-embedded/releases/download/${DART_SASS_VERSION}/sass_embedded-${DART_SASS_VERSION}-linux-x64.tar.gz && \
     tar xf sass-embedded.tar.gz && \
     mv ./sass_embedded/dart-sass-embedded /usr/bin/ && \
