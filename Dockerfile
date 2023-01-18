@@ -50,14 +50,20 @@ LABEL org.opencontainers.image.licenses=MIT
 
 COPY --from=build /go/bin/hugo /usr/bin/hugo
 
+
+
 RUN   apt-get update && \ 
       apt-get install -y \
       wget \
       tzdata \
       git \
-      nodejs \
+
+RUN   curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo bash -
+
+RUN   apt-get install -y 
       npm \
       golang && \
+
     npm install --global --production \
       yarn \
       postcss \
