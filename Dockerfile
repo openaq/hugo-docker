@@ -50,7 +50,7 @@ LABEL org.opencontainers.image.licenses=MIT
 
 COPY --from=build /go/bin/hugo /usr/bin/hugo
 
-RUN  curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo bash -
+RUN  curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 
 
 RUN   apt-get update && \ 
