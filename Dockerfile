@@ -4,7 +4,7 @@ ARG HUGO_BUILD_TAGS=extended
 
 ARG GO_VERSION=1.19
 
-FROM golang:${GO_VERSION}-buster AS build
+FROM golang:${GO_VERSION}-bullseye AS build
 
 ARG HUGO_VERSION
 ARG HUGO_BUILD_TAGS
@@ -33,7 +33,7 @@ RUN git clone \
 RUN go build -v -ldflags "-X github.com/gohugoio/hugo/common/hugo.vendorInfo=docker" -tags "$HUGO_BUILD_TAGS" && \
     mv ./hugo /go/bin/hugo
 
-FROM debian:buster
+FROM debian:bullseye
 
 ARG HUGO_VERSION
 
