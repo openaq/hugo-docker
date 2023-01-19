@@ -50,7 +50,10 @@ LABEL org.opencontainers.image.licenses=MIT
 
 COPY --from=build /go/bin/hugo /usr/bin/hugo
 
-RUN  curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+RUN   apt-get update && \ 
+      apt-get install -y \ 
+      curl && \
+      curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 
 
 RUN   apt-get update && \ 
@@ -58,6 +61,7 @@ RUN   apt-get update && \
       wget \
       tzdata \
       git \
+      nodejs \
       golang && \
 
     npm install --global --production \
